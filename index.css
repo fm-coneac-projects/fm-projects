@@ -1,0 +1,147 @@
+/* -----------------------*/
+/* Custom properties-----*/
+/* -----------------------*/
+:root {
+    /* colors */
+    --clr-black: hsl(0, 0%, 8%);
+    --clr-dark-grey: hsl(0, 0%, 14%);
+    --clr-green: hsl(153, 71%, 59%);
+    --clr-grey: hsl(0, 0%, 85%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    /* font-sizes */
+    --fw-700: 700;
+    --fw-500: 500;
+
+    /* font-families */
+    --ff-space-grotesk: 'Space-Grotesk'
+}
+
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: var(--ff-space-grotesk);
+    background: var(--clr-black);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    /*padding: 39px 165px;*/
+}
+
+h1 {
+    font-weight: var(--fw-700);
+    font-size: 88px;
+    line-height: 88px;
+    letter-spacing: -2.5px;
+
+    color: var(--clr-white);
+}
+
+h2 {
+    font-weight: var(--fw-700);
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -1.5px;
+
+    color: var(--clr-white);
+}
+
+h3 {
+    font-weight: var(--fw-700);
+    font-size: 24px;
+    line-height: 32px;
+
+    color: var(--clr-white);
+}
+
+.body-text {
+    font-weight: var(--fw-500);
+    font-size: 18px;
+    line-height: 28px;
+
+    color: var(--clr-grey);
+}
+
+main {
+    text-align:center;
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+.no-visibility {
+    display: none;
+}
+
+/* header */
+.header-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+}
+
+.name {
+    font-weight: var(--fw-700);
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.44px;
+
+    color: var(--clr-white);
+
+    margin: 20px auto;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.social-icon {
+    width: 19px;
+    height: 19px;
+}
+
+/* main */
+.profile-picture {
+    margin-top: -100px;
+    width: 174px;
+    height: 383px;
+}
+
+.pattern-rings {
+    position: relative;
+    top: -270px;
+    left: -340px;
+    z-index: 1;
+}
+
+.pattern-circle {
+    position: relative;
+    top: -270px;
+    right: -200px;
+    z-index: 1;
+
+}
