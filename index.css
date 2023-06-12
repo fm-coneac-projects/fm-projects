@@ -14,7 +14,7 @@
     --fw-500: 500;
 
     /* font-families */
-    --ff-space-grotesk: 'Space-Grotesk'
+    --ff-space-grotesk: 'Space Grotesk'
 }
 
 
@@ -45,10 +45,12 @@ body {
 
 h1 {
     font-weight: var(--fw-700);
-    font-size: 88px;
-    line-height: 88px;
-    letter-spacing: -2.5px;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -1.14px;
+    text-align: center;
 
+    width: 343px;
     color: var(--clr-white);
 }
 
@@ -69,16 +71,8 @@ h3 {
     color: var(--clr-white);
 }
 
-.body-text {
-    font-weight: var(--fw-500);
-    font-size: 18px;
-    line-height: 28px;
-
-    color: var(--clr-grey);
-}
-
 main {
-    text-align:center;
+    text-align: center;
 }
 
 /* ------------------- */
@@ -88,6 +82,14 @@ main {
 /* general */
 .no-visibility {
     display: none;
+}
+
+.body-text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 26px;
+
+    color: var(--clr-grey);
 }
 
 /* header */
@@ -115,7 +117,7 @@ main {
     flex-direction: row;
     gap: 32px;
 
-    margin-left:auto;
+    margin-left: auto;
     margin-right: auto;
 }
 
@@ -143,5 +145,30 @@ main {
     top: -270px;
     right: -200px;
     z-index: 1;
+}
 
+.my-description {
+    display: flex;
+    flex-direction: column;
+    gap: 40px
+}
+
+.my-description-text {
+    padding: 0 16px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contact-me {
+    text-transform: uppercase;
+    font-weight: var(--fw-700);
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 2px;
+
+    color: var(--clr-white);
+    text-decoration: underline var(--clr-green);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 15px;
 }
