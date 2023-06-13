@@ -1,0 +1,314 @@
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 500;
+    background-color: #F2F2F2;
+}
+
+/* header */
+header {
+    padding: 16px;
+    /*background-color: yellow;*/
+    color: #151515;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 35px;
+    letter-spacing: -0.486111px;
+}
+
+/* hamburger menu */
+.nav {
+    margin-left: 60px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.nav:hover {
+    cursor: pointer;
+}
+
+.nav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__list a {
+    text-decoration: none;
+    color: #151515;
+}
+
+.nav__toggle {
+    width: 32px;
+    height: 18px;
+    background-image: url(images/icon-menu.svg);
+}
+
+.nav__link img {
+    margin-left: 7px;
+}
+
+.grey {
+    color: #686868 !important;
+}
+
+/* menu content */
+/*.btn-auth {*/
+/*    width: 100%;*/
+
+/*    font-size: 14px;*/
+/*    line-height: 16px;*/
+/*    color: #686868;*/
+
+/*    padding: 13px auto;*/
+/*    border: 1.5px solid #686868;*/
+/*    border-radius: 14px;*/
+
+/*}*/
+
+/* main content */
+
+.hero-image {
+    width: 375px;
+    height: 281px;
+    background-image: url(images/image-hero-mobile.png);
+    background-size: cover;
+}
+
+.details {
+    text-align: center;
+}
+
+h1 {
+    margin-top: 48px;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: -0.5px;
+    color: #151515;
+}
+
+p {
+    padding: 16px;
+
+    font-size: 16px;
+    line-height: 26px;
+    color: #686868;
+}
+
+.btn-learn-more {
+    margin-top: 24px;
+    background: #151515;
+    color: #FAFAFA;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.22px;
+
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer {
+    margin-top: 48px;
+    height: 26px;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.databiz {
+    width: 81px;
+    height: 14px;
+}
+
+.audiophile {
+    width: 53px;
+    height: 26px;
+}
+
+.meet {
+    width: 64px;
+    height: 14px;
+}
+
+.marker {
+    width: 59px;
+    height: 17px;
+}
+
+@media only screen and (min-width: 1440px) {
+    .nav,
+    .nav__list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav {
+        width: 100%;
+        align-content: space-between;
+        align-items: center;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav__list {
+        gap: 40px;
+    }
+
+    .nav__buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;;
+        margin-left: auto;
+    }
+
+    .btn-auth {
+        cursor: pointer;
+
+        border-radius: 14px;
+        padding: 12px 22px;
+    }
+
+    .btn-auth:hover {
+        border: 1.5px solid #151515;
+    }
+
+    .features:hover {
+
+    }
+
+    .hover-menu {
+        background-color: white;
+        padding: 24px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.149126);
+        border-radius: 10px;
+
+        position: absolute;
+        /*width: 153px;*/
+        /*height: 160px;*/
+    }
+
+    .hover-menu > ul {
+        padding: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .hover-menu > ul > li {
+        list-style: none;
+        font-size: 14px;
+        line-height: 16px;
+        color: #686868;
+
+        display: flex;
+        gap: 14px;
+        align-items: center;
+    }
+
+    .hover-menu > ul > li > img {
+        width: 16px;
+    }
+
+    .features {
+
+        left: 90px;
+        top: 70px;
+    }
+
+    .company{
+
+    }
+
+    main {
+        margin-top: 58px;
+        display: flex;
+        flex-direction: row;
+        gap: 124px;
+        padding-left: 165px;
+        padding-right: 131px;
+    }
+
+    .hero-image {
+        order: 2;
+
+        width: 480px;
+        height: 640px;
+        background-image: url(images/image-hero-desktop.png);
+    }
+
+    .details {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    h1 {
+        margin-top: 60px;
+        font-size: 80px;
+        line-height: 80px;
+        letter-spacing: -1.11111px;
+
+        width: 80%;
+    }
+
+    p {
+        padding: 0;
+        margin-top: 48px;
+
+        font-size: 18px;
+        line-height: 28px;
+        width: 60%;
+    }
+
+    .btn-learn-more {
+        margin-top: 51px;
+        color: #151515;
+        background: #F2F2F2;
+
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.25px;
+
+        padding: 15px 30px;
+        margin-left: 0;
+        border: 1px solid #151515;
+    }
+
+    .footer {
+        width: 60%;
+
+        margin-top: auto;
+    }
+}
