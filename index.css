@@ -125,7 +125,7 @@ header {
     margin-top: -100px;
     width: 174px;
     height: 383px;
-    background: url(images/image-profile-mobile.webp) no-repeat center center;
+    background: url(images/simina.webp) no-repeat center center;
     background-size: cover;
 }
 
@@ -355,7 +355,7 @@ header {
         margin-right: -30px;
         width: 350px;
         height: 486px;
-        background: url(images/image-profile-tablet.webp) no-repeat center center;
+        background: url(images/simina.webp) no-repeat center center;
         background-size: cover;
         z-index: -1;
     }
@@ -484,7 +484,7 @@ header {
         margin-top: -70px;
         width: 445px;
         height: 720px;
-        background: url(images/image-profile-desktop.webp) no-repeat center center;
+        background: url(images/simina.webp) no-repeat center center;
         background-size: cover;
     }
 
