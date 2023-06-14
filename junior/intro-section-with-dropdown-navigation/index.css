@@ -186,7 +186,7 @@ p {
         display: flex;
         flex-direction: row;
         gap: 20px;
-        align-items: center;;
+        align-items: center;
         margin-left: auto;
     }
 
@@ -201,10 +201,6 @@ p {
         border: 1.5px solid #151515;
     }
 
-    .features:hover {
-
-    }
-
     .hover-menu {
         background-color: white;
         padding: 24px;
@@ -212,8 +208,6 @@ p {
         border-radius: 10px;
 
         position: absolute;
-        /*width: 153px;*/
-        /*height: 160px;*/
     }
 
     .hover-menu > ul {
@@ -245,9 +239,6 @@ p {
         top: 70px;
     }
 
-    .company{
-
-    }
 
     main {
         margin-top: 58px;
