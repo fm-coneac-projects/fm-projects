@@ -521,7 +521,7 @@ header {
 
     .project__image {
         height: 400px;
-        width: 540px;
+        width: 100%;
         background-size: cover !important;
     }
 
