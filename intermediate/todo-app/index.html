@@ -11,6 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
     <div class="container">
@@ -28,15 +32,15 @@
         </div>
         <div class="todo-item first">
             <input type="radio" id="new-todo-radio"><img src="images/icon-check.svg" class="check-img" alt="icon check"/>
-            <input id="new-todo" class="todo-input" type="text" placeholder="Create a new todo">
+            <input id="new-todo" class="todo-input rounded-border" type="text" placeholder="Create a new todo">
         </div>
 
         <div class="todo-list">
             <ul>
-                <li>
-                    <div class="todo-item">
+                <li class="top-rounded-border">
+                    <div class="todo-item top-rounded-border">
                         <input type="radio" name="1">
-                        <input class="todo-input" type="text" value="Complete online javascript course">
+                        <input class="todo-input top-rounded-border" type="text" value="Complete online javascript course">
                     </div>
                 </li>
                 <li>
@@ -46,13 +50,13 @@
                     </div>
                 </li>
             </ul>
-            <div class="todo-summary spread">
+            <div class="todo-summary spread bottom-rounded-border">
                 <a href="#" id="btn-items-left">5 items left</a>
                 <a href="#" id="btn-clear-completed">Clear Completed</a>
             </div>
         </div>
 
-        <div class="todo-summary centered">
+        <div class="todo-summary centered rounded-border">
             <a href="#">All</a>
             <a href="#">Active</a>
             <a href="#">Completed</a>

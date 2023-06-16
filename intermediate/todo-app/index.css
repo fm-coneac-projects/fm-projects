@@ -31,7 +31,7 @@
     --clr-font: #494C6B;
     --clr-font-disabled: #9495A5;
     --clr-input-background: #FFF;
-    --clr-input-shadow: rgba(0, 0, 0, 0.5);
+    --clr-input-shadow: rgba(255, 255, 255, 0.5);
     --clr-border-bottom: #E3E4F1;
     --clr-radio: #E3E4F1;
 }
@@ -84,13 +84,14 @@ body {
 
 .first {
     margin-top: 40px;
+    border-radius: 5px;
 }
 
 .todo-item {
     background-color: var(--clr-input-background);
     border: none;
     box-shadow: 0 35px 50px -15px var(--clr-input-shadow);
-    border-radius: 5px;
+
 
     padding-left: 10px;
     display: flex;
@@ -117,8 +118,7 @@ body {
     color: var(--clr-font);
     width: 100%;
 
-    box-shadow: 0 35px 50px -15px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
+    box-shadow: 0 35px 50px -15px var(--clr-input-shadow);
     border: 0;
     padding: 14px 20px;
 }
@@ -129,10 +129,23 @@ body {
 
 .todo-list {
     margin-top: 1rem;
-    box-shadow: 0 35px 50px -15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 35px 50px -15px var(--clr-input-shadow);
+}
+
+/*.todo-list,*/
+.rounded-border {
     border-radius: 5px;
 }
 
+.top-rounded-border {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.bottom-rounded-border {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
 
 .todo-list ul {
     list-style: none;

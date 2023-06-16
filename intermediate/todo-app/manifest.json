@@ -1,9 +1,0 @@
-{
-  "name": "Todo list",
-  "short_name": "Todo",
-  "theme_color": "#8a21f3",
-  "background_color": "#171823",
-  "display": "browser",
-  "scope": "/",
-  "start_url": "/"
-}
