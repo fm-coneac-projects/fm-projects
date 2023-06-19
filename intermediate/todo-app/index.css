@@ -8,11 +8,14 @@
     --clr-font-disabled: #5B5E7E;
     --clr-input-background: #25273D;
     --clr-input-shadow: rgba(0, 0, 0, 0.5);
+    --clr-list-shadow: rgba(194, 195, 214, 0.5);
     --clr-border-bottom: #393A4B;
     --clr-radio: #393A4B;
 
     /* font-families */
-    --ff-josefin-sans: 'Josefin Sans'
+    --ff-josefin-sans: 'Josefin Sans';
+    --header-image: url(images/bg-mobile-dark.jpg);
+    --theme-image: url(images/icon-sun.svg);
 }
 
 :root:has(#dark:checked) {
@@ -21,19 +24,28 @@
     --clr-font-disabled: #5B5E7E;
     --clr-input-background: #25273D;
     --clr-input-shadow: rgba(0, 0, 0, 0.5);
+    --clr-list-shadow: rgba(0, 0, 0, 0.5);
     --clr-border-bottom: #393A4B;
     --clr-radio: #393A4B;
+
+    --ff-josefin-sans: 'Josefin Sans';
+    --header-image: url(images/bg-mobile-dark.jpg);
+    --theme-image: url(images/icon-sun.svg);
 }
 
 :root:has(#light:checked) {
     --clr-background: #F2F2F2;
-
     --clr-font: #494C6B;
-    --clr-font-disabled: #9495A5;
+    --clr-font-disabled: #767992;
     --clr-input-background: #FFF;
     --clr-input-shadow: rgba(255, 255, 255, 0.5);
+    --clr-list-shadow: rgba(194, 195, 214, 0.5);
     --clr-border-bottom: #E3E4F1;
     --clr-radio: #E3E4F1;
+
+    --ff-josefin-sans: 'Josefin Sans';
+    --header-image: url(images/bg-mobile-light.jpg);
+    --theme-image: url(images/icon-moon.svg);
 }
 
 *, *::before, *::after {
@@ -52,7 +64,7 @@ body {
     background: var(--clr-background);
     color: var(--clr-font);
 
-    background-image: url(images/bg-mobile-dark.jpg);
+    background-image: var(--header-image);
     background-repeat: no-repeat;
     background-size: 100% 200px;
 
@@ -70,16 +82,10 @@ body {
     justify-content: space-between;
 }
 
-.img-theme-dark {
-    width: 20px;
-    height: 20px;
-    background: url(images/icon-moon.svg) no-repeat center center;
-}
-
-.img-theme-light {
-    width: 20px;
-    height: 20px;
-    background: url(images/icon-sun.svg) no-repeat center center;
+.img-theme {
+    width: 26px;
+    height: 26px;
+    background: var(--theme-image) no-repeat center center;
 }
 
 .first {
@@ -92,14 +98,13 @@ body {
     border: none;
     box-shadow: 0 35px 50px -15px var(--clr-input-shadow);
 
-
     padding-left: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.todo-item input[type="radio"] {
+.todo-item input[type="checkbox"] {
     appearance: none;
     height: 20px;
     width: 20px;
@@ -109,11 +114,38 @@ body {
     cursor: pointer;
 }
 
-.todo-item input[type="radio"]:checked {
+.parent {
+    position: relative;
+}
+
+.child {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 6px;
+    left: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+.checked-state {
+    text-decoration-line: line-through;
+    color: var(--clr-font-disabled);
+}
+
+.todo-item input[type="checkbox"]:checked {
     background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
 }
 
 .todo-input {
+    font-family: var(--ff-josefin-sans);
+    font-weight: var(--fw-400);
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.166px;
+
     background-color: var(--clr-input-background);
     color: var(--clr-font);
     width: 100%;
@@ -127,9 +159,10 @@ body {
     outline: none;
 }
 
+
 .todo-list {
-    margin-top: 1rem;
-    box-shadow: 0 35px 50px -15px var(--clr-input-shadow);
+    margin-top: 16px;
+    box-shadow: 0 35px 50px -15px var(--clr-list-shadow);
 }
 
 /*.todo-list,*/
@@ -158,9 +191,16 @@ body {
     border-bottom: 1px solid var(--clr-border-bottom);
 }
 
+.todo-delete {
+    width: 12px;
+    height: 12px;
+    margin-right: 20px;
+}
+
 .todo-summary {
     background-color: var(--clr-input-background);
     color: var(--clr-font-disabled);
+    box-shadow: 0 35px 50px -15px var(--clr-list-shadow);
 
     display: flex;
     flex-direction: row;
@@ -211,6 +251,59 @@ body {
     letter-spacing: -0.194444px;
 }
 
-.active{
-    color: #3A7CFD;
+.active {
+    color: #3A7CFD !important;
+}
+
+@media only screen and (min-width: 1440px) {
+
+    :root:has(#dark:checked) {
+        --header-image: url(images/bg-desktop-dark.jpg);
+    }
+
+    :root:has(#light:checked) {
+        --header-image: url(images/bg-desktop-light.jpg);
+    }
+
+    body {
+        background-size: 100% 300px;
+        padding-top: 70px;
+    }
+
+    .container {
+        max-width: 541px;
+        margin-top: 48px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header > svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .todo-input {
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: -0.25px;
+
+        padding: 20px 24px;
+    }
+
+    .todo-list {
+        margin-top: 24px;
+    }
+
+    .todo-summary > a,
+    .todo-summary > p {
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: -0.91944px;
+    }
+
+    .centered {
+        margin-top: -48px !important;
+        background-color: transparent;
+    }
+
 }
