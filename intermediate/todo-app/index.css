@@ -301,6 +301,11 @@ body {
         letter-spacing: -0.91944px;
     }
 
+    .todo-delete {
+        width: 18px;
+        height: 18px;
+    }
+
     .centered {
         margin-top: -48px !important;
         background-color: transparent;

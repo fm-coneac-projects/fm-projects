@@ -48,6 +48,7 @@ onValue(todoListInDB, function (snapshot) {
     }
 
     let itemsArray = Object.entries(snapshot.val())
+    let itemsLeft = 0;
 
     let listHtml = ``;
     for (let item of itemsArray) {
@@ -55,6 +56,7 @@ onValue(todoListInDB, function (snapshot) {
         let itemValue = item[1];
         let todoText = itemValue["todo-text"];
         let checked = !itemValue["active"] ? "checked" : "";
+        if (!checked) itemsLeft++;
 
         listHtml += `
          <li class="top-rounded-border">
@@ -72,7 +74,7 @@ onValue(todoListInDB, function (snapshot) {
     listHtml = `<ul>` + listHtml + `</ul>`;
     todoList.innerHTML = listHtml;
 
-    btnItemsLeft.innerHTML = `0 items left`;
+    btnItemsLeft.innerHTML = `${itemsLeft} items left`;
     for (let deletBtn of btnDeleteTodos) {
         deletBtn.addEventListener("click", () => {
             let exactLocationFromDB = ref(database, `todoList/${deletBtn.id}`);
