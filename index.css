@@ -230,11 +230,11 @@ header {
 }
 
 .project:nth-child(1) > .project__image {
-    background: url(images/thumbnail-project-1-small.webp) no-repeat center center;
+    background: url(images/project-1-small.jpg) no-repeat center center;
 }
 
 .project:nth-child(2) > .project__image {
-    background: url(images/thumbnail-project-2-small.webp) no-repeat center center;
+    background: url(images/project-2-small.jpg) no-repeat center center;
 }
 
 .project:nth-child(3) > .project__image {
@@ -531,11 +531,11 @@ header {
     }
 
     .project:nth-child(1) > .project__image {
-        background: url(images/thumbnail-project-1-large.webp) no-repeat;
+        background: url(images/project-1-large.jpg) no-repeat center center;
     }
 
     .project:nth-child(2) > .project__image {
-        background: url(images/thumbnail-project-2-large.webp) no-repeat center center;
+        background: url(images/project-2-large.jpg) no-repeat center center;
     }
 
     .project:nth-child(3) > .project__image {
