@@ -1,6 +1,4 @@
 body {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     background-color: #E6EFF5;
 
@@ -167,4 +165,62 @@ button:hover {
     cursor: pointer;
     background-color: #a9c42d;
     transform: scale(1.01);
+}
+
+@media all and (max-width: 375px) {
+    #card {
+        width: 311px;
+        height: 722px;
+        margin: 72px auto 62px;
+
+        box-shadow: 0 15px 30px rgba(0, 81, 171, 0.148847);
+        border-radius: 5px;
+    }
+
+    #top-section {
+        padding: 28px 24px 32px 24px;
+        height: 35%;
+    }
+
+    #top-section h2 {
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: -0.25px;
+    }
+
+    #top-section h4 {
+        font-size: 15px;
+        line-height: 20px;
+        letter-spacing: -0.1875px;
+
+        margin-top: 24px;
+    }
+
+    #top-section p {
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: -0.175px;
+
+        margin-top: 11px;
+    }
+
+    #bottom-section {
+        height: 65%;
+        flex-direction: column;
+    }
+
+    #bottom-left-section {
+        padding: 24px;
+        width: 100%;
+    }
+
+    #bottom-right-section {
+        padding: 24px;
+        width: 100%;
+    }
+
+    ul {
+        margin-top: 11px;
+        opacity: 0.75;
+    }
 }
