@@ -1,0 +1,133 @@
+:root {
+    --clr-moderate-violet: #733FC8;
+    --clr-very-dark-greish-blue: #48556A;
+    --clr-very-dark-blackish-blue: #19202D;
+    --clr-white: #FFFFFF;
+
+    --clr-light-gray: #CFCFCF;
+    --clr-light-grayish-blue: #ECF2F8;
+
+    --ff-name: 'Barlow Semi Condensed';
+
+    --fw-500: 500;
+    --fw-600: 600;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--ff-name), sans-serif;
+    font-size: 13px;
+    background-color: #ECF2F8;
+}
+
+#testimonial-grid-container {
+    width: 100%;
+    padding: 5.46em 1.84em;
+}
+
+#testimonial-1 {
+    background-color: var(--clr-moderate-violet);
+    color: var(--clr-white);
+    position: relative;
+    z-index: 1;
+}
+
+#testimonial-2 {
+    background-color: var(--clr-very-dark-greish-blue);
+    color: var(--clr-white);
+}
+
+#testimonial-3,
+#testimonial-5 {
+    background-color: var(--clr-white);
+    color: var(--clr-very-dark-greish-blue);
+}
+
+#testimonial-4 {
+    background-color: var(--clr-very-dark-blackish-blue);
+    color: var(--clr-white);
+}
+
+.grid-item {
+    margin-bottom: 24px;
+    padding: 20px;
+
+    box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.247378);
+    border-radius: 8px;
+}
+
+.lower-opacity {
+    opacity: 0.70;
+    font-size: 0.7rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+.header img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.grid-item h1 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+#quote {
+    position: absolute;
+    top: 0;
+    right: 15%;
+    z-index: 0;
+}
+
+@media (min-width: 576px) {
+    #testimonial-grid-container,
+    #main-left,
+    #top,
+    #bottom {
+        display: flex;
+    }
+
+    #testimonial-grid-container {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    #testimonial-5 {
+        flex-basis: 20%;
+    }
+
+    #main-left {
+        flex-basis: 80%;
+        flex-direction: column;
+    }
+
+    #main-left .grid-item {
+        margin-right: 15px;
+    }
+
+    #top,
+    #bottom {
+        flex-basis: 50%;
+    }
+
+    #testimonial-1,
+    #testimonial-4 {
+        flex-basis: 65%;
+    }
+
+    #testimonial-2,
+    #testimonial-3 {
+        flex-basis: 35%;
+    }
+}
