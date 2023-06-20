@@ -10,7 +10,7 @@ body {
     height: 100vh;
 }
 
-h2, h4 {
+h1, h2 {
     margin: 0;
 }
 
@@ -19,7 +19,7 @@ h2, h4 {
 }
 
 #card {
-    width: 635px;
+    max-width: 635px;
     height: 475px;
 
     display: flex;
@@ -35,7 +35,7 @@ h2, h4 {
     height: 45%;
 }
 
-#top-section h2 {
+#top-section h1 {
     color: #2AB3B1;
     font-weight: 700;
     font-size: 24px;
@@ -43,7 +43,7 @@ h2, h4 {
     letter-spacing: -0.3px;
 }
 
-#top-section h4 {
+#top-section h2 {
     color: #C0DF33;
     font-weight: 700;
     font-size: 18px;
@@ -73,7 +73,7 @@ h2, h4 {
     color: #fff;
 }
 
-#bottom-section h4 {
+#bottom-section h2 {
     font-weight: 700;
     font-size: 18px;
     line-height: 21px;
@@ -91,7 +91,7 @@ h2, h4 {
     flex-direction: column;
 }
 
-#bottom-left-section h4 {
+#bottom-left-section h2 {
     margin-bottom: 18px;
 }
 
@@ -187,13 +187,13 @@ button:hover {
         height: 35%;
     }
 
-    #top-section h2 {
+    #top-section h1 {
         font-size: 20px;
         line-height: 23px;
         letter-spacing: -0.25px;
     }
 
-    #top-section h4 {
+    #top-section h2 {
         font-size: 15px;
         line-height: 20px;
         letter-spacing: -0.1875px;
