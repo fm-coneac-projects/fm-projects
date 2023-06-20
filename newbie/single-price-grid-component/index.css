@@ -3,6 +3,11 @@ body {
     background-color: #E6EFF5;
 
     font-family: 'Karla', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 h2, h4 {
@@ -18,7 +23,7 @@ h2, h4 {
     height: 475px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 163px;
+    /*margin-top: 163px;*/
 
     display: flex;
     flex-direction: column;
