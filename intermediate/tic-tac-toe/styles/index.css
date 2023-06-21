@@ -184,6 +184,10 @@ button {
     font-weight: var(--fw-700) !important;
 }
 
+.low-opacity {
+    opacity: 0.5;
+}
+
 .uppercase {
     text-transform: uppercase;
 }
@@ -326,6 +330,36 @@ button {
 
 .pick-player {
     width: 100%;
+    padding-top: 24px;
+    padding-bottom: 30px;
+}
+
+.player-buttons {
+    background-color: var(--clr-dark-navy);
+    border-radius: 10px;
+    width: 90%;
+    height: 72px;
+
+    margin-top: 24px;
+    margin-bottom: 17px;
+    padding: 9px 8px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.player-buttons i {
+    flex-basis: 50%;
+    box-shadow: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-buttons i:hover {
+    cursor: pointer;
 }
 
 .new-game-buttons {
