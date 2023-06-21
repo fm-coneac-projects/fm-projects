@@ -23,7 +23,7 @@
 <body class="flex-column-centered">
     <main>
         <!-- new game -->
-        <div class="new-game">
+        <div class="new-game hidden" data-id="new-game">
             <img src="assets/logo.svg" alt="logo"/>
             <div class="btn-secondary-semi-dark-navy pick-player">
                 <p class="heading-xs color-silver">pick player 1's mark</p>
@@ -40,7 +40,7 @@
         </div>
 
         <!-- board display -->
-        <div class="grid hidden">
+        <div class="grid" data-id="game-board">
             <!-- action area -->
             <div class="left">
                 <img src="assets/logo.svg" alt="logo" class="logo"/>
@@ -53,21 +53,21 @@
                 </button>
             </div>
             <div class="right">
-                <button class="btn-secondary-silver btn-large">
+                <button class="btn-secondary-silver btn-large" data-id="btn-restart">
                     <img src="assets/icon-restart.svg" alt="restart"/>
                 </button>
             </div>
 
             <!-- board area -->
-            <div id="0" class="square center"></div>
-            <div id="1" class="square center"></div>
-            <div id="2" class="square center"></div>
-            <div id="3" class="square center"></div>
-            <div id="4" class="square center"></div>
-            <div id="5" class="square center"></div>
-            <div id="6" class="square center"></div>
-            <div id="7" class="square center"></div>
-            <div id="8" class="square center"></div>
+            <div id="1" data-id="square" class="square middle-centered"></div>
+            <div id="2" data-id="square" class="square middle-centered"></div>
+            <div id="3" data-id="square" class="square middle-centered"></div>
+            <div id="4" data-id="square" class="square middle-centered"></div>
+            <div id="5" data-id="square" class="square middle-centered"></div>
+            <div id="6" data-id="square" class="square middle-centered"></div>
+            <div id="7" data-id="square" class="square middle-centered"></div>
+            <div id="8" data-id="square" class="square middle-centered"></div>
+            <div id="9" data-id="square" class="square middle-centered"></div>
 
             <!-- score area -->
             <div class="score flex-column-centered background-light-blue">
@@ -87,17 +87,17 @@
 
 
     <!--    Modal that opens when game ends-->
-    <div class="modal hidden">
+    <div class="modal hidden" data-id="modal">
         <div class="modal-contents">
-            <p id="modal-text" class="body color-silver uppercase bold">you won!</p>
+            <p data-id="modal-text" class="body color-silver uppercase bold">you won!</p>
             <div class="round heading-m color-light-blue">
                 <img src="assets/icon-o.svg" alt="O" class="hidden"/>
                 <img src="assets/icon-x.svg" alt="X" class="hidden"/>
                 <span>takes the round</span>
             </div>
             <div class="modal-buttons">
-                <button id="btn-quit" class="btn-secondary-silver heading-xs">quit</button>
-                <button id="btn-next" class="btn-secondary-yellow heading-xs">next round</button>
+                <button data-id="modal-btn-quit" class="btn-secondary-silver heading-xs">quit</button>
+                <button data-id="modal-btn-next" class="btn-secondary-yellow heading-xs">next round</button>
             </div>
         </div>
     </div>

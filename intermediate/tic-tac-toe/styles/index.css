@@ -207,6 +207,13 @@ button {
     justify-content: center;
 }
 
+.middle-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn-xs {
     width: 16px;
     height: 16px;
@@ -282,6 +289,11 @@ button {
 .square:hover {
     cursor: pointer;
     opacity: 0.9;
+}
+
+.board-player-ico {
+    width: 38px;
+    height: 38px;
 }
 
 /* bottom */
