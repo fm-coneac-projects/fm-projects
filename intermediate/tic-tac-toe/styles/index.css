@@ -261,6 +261,11 @@ button {
 .btn-turn {
     width: 96px;
     height: 40px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
 }
 
 @keyframes turn-icon-animation {

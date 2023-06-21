@@ -162,7 +162,7 @@ function hasMove(squareId) {
 function displayResult(gameWinner) {
     App.el.modal.popup.classList.toggle('hidden');
 
-    let message = '';
+    let message;
     if (gameWinner) {
         message = `Player ${gameWinner} wins!`;
     } else {
@@ -179,5 +179,12 @@ function nextRound() {
 }
 
 function quitGame() {
+    App.el.board.squares.forEach(square => square.replaceChildren());
     App.el.modal.popup.classList.toggle('hidden');
+    App.el.newGameWindow.classList.toggle('hidden');
+    App.el.gameBoardWindow.classList.toggle('hidden');
+}
+
+function resetBoard() {
+    App.el.board.squares.forEach(square => square.replaceChildren());
 }
