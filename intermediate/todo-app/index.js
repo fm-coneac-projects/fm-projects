@@ -105,11 +105,11 @@ function addTodoItem(itemId, checked, todoText) {
          <li class="top-rounded-border">
             <div class="todo-item top-rounded-border">
                 <div class="parent">
-                    <input class="todo-checked" type="checkbox" id="${itemId}" ${checked}>
+                    <input class="todo-checked" type="checkbox" data-id="${itemId}" ${checked}>
                         <img src="images/icon-check.svg" class="child hidden" style="width: 11px; height: 9px;" alt="complete todo" />
                 </div>
-                <input class="todo-input top-rounded-border" id="${itemId}" type="text" value="${todoText}">
-                <img class="todo-delete" src="images/icon-cross.svg" style="width: 11px; height: 9px;" id="${itemId}" alt="delete todo"/>
+                <input class="todo-input top-rounded-border" data-id="${itemId}" type="text" value="${todoText}">
+                <img class="todo-delete" src="images/icon-cross.svg" style="width: 11px; height: 9px;" data-id="${itemId}" alt="delete todo"/>
             </div>
          </li>
         `;
@@ -147,7 +147,7 @@ function populateTodoList(itemsArray, currentFilter) {
 function addUpdateFunctionality() {
     for (let updateBtn of btnUpdateTodos) {
         updateBtn.addEventListener("click", () => {
-            let exactLocationFromDB = ref(database, `todoList/${updateBtn.id}`);
+            let exactLocationFromDB = ref(database, `todoList/${updateBtn.dataset.id}`);
             update(exactLocationFromDB, {active: !updateBtn.checked});
         });
     }
@@ -156,7 +156,7 @@ function addUpdateFunctionality() {
 function addDeleteFunctionality() {
     for (let deleteBtn of btnDeleteTodos) {
         deleteBtn.addEventListener("click", () => {
-            let exactLocationFromDB = ref(database, `todoList/${deleteBtn.id}`);
+            let exactLocationFromDB = ref(database, `todoList/${deleteBtn.dataset.id}`);
             remove(exactLocationFromDB);
         });
     }
