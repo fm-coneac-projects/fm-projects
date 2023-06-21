@@ -1,11 +1,13 @@
 :root {
     /* colors */
+    --clr-dark-navy: #1A2A33;
+
     --clr-silver: #A8BFC9;
     --clr-silver-hover: #DBE8ED;
     --clr-silver-shadow: #6B8997;
 
     --clr-semi-dark-navy: #1F3641;
-    --clr-dark-navy: #1A2A33;
+    --clr-semi-dark-navy-shadow: #10212A;
 
     --clr-light-yellow-hover: #FFC860;
     --clr-light-yellow: #F2B137;
@@ -34,16 +36,16 @@ html,
 body {
     height: 100%;
     background-color: var(--clr-dark-navy);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 body {
     padding-left: 24px;
     padding-right: 24px;
+}
+
+button {
+    text-align: center;
+    text-transform: uppercase;
 }
 
 /* helper classes */
@@ -85,6 +87,31 @@ body {
     line-height: 18px;
     letter-spacing: 0.875px;
 }
+
+.background-light-blue {
+    background-color: var(--clr-light-blue);
+}
+
+.background-silver {
+    background-color: var(--clr-silver);
+}
+
+.background-yellow {
+    background-color: var(--clr-light-yellow);
+}
+
+.color-light-blue {
+    color: var(--clr-light-blue);
+}
+
+.color-silver {
+    color: var(--clr-silver);
+}
+
+.color-yellow {
+    color: var(--clr-light-yellow);
+}
+
 
 /* controls classes */
 .btn-primary-yellow {
@@ -140,27 +167,70 @@ body {
     cursor: pointer;
 }
 
-
-.btn-redo {
-    width: 52px;
-    height: 52px;
-
-    background: var(--clr-silver);
-    background-image: url(../assets/icon-restart.svg);
-    box-shadow: inset 0 -4px 0 var(--clr-silver-shadow);
+.btn-secondary-semi-dark-navy {
+    background: var(--clr-semi-dark-navy);
+    box-shadow: inset 0 -4px 0 var(--clr-semi-dark-navy-shadow);
     border-radius: 10px;
 
-    color: var(--clr-semi-dark-navy);
-}
-
-.btn-redo:hover {
-    background: var(--clr-silver-hover);
-    cursor: pointer;
+    color: var(--clr-silver);
 }
 
 /* shared utility classes */
 .hidden {
-    display: none;
+    display: none !important;
+}
+
+.bold {
+    font-weight: var(--fw-700) !important;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-xs {
+    width: 16px;
+    height: 16px;
+}
+
+.btn-small {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-large {
+    width: 40px;
+    height: 40px;
+}
+
+.btn-large img {
+    width: 15.38px;
+    height: 15.38px;
+}
+
+.flex-column-centered,
+.new-game,
+.modal-contents,
+.pick-player {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* general */
@@ -172,26 +242,104 @@ body {
 }
 
 /* top */
-.turn {
-    background-color: green;
-    grid-column-start: 1;
-    grid-column-end: 3;
+.logo {
+    width: 71.97px;
+    height: 32px;
 }
 
-.actions {
-    background-color: purple;
+.btn-turn {
+    width: 96px;
+    height: 40px;
+}
+
+@keyframes turn-icon-animation {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-turn i {
+    animation: 0.6s ease-in-out turn-icon-animation;
 }
 
 /* middle */
 .square {
-    background-color: red;
+    background: var(--clr-semi-dark-navy);
+    box-shadow: inset 0 -8px 0 var(--clr-semi-dark-navy-shadow);
+    border-radius: 10px;
+}
+
+.square:hover {
+    cursor: pointer;
+    opacity: 0.9;
 }
 
 /* bottom */
-.score{
-    background-color: blue;
+.score {
+    color: var(--clr-dark-navy);
+    border-radius: 10px;
 }
 
+/* modal */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-contents {
+    /*transform: translateY(-80px);*/
+    background-color: var(--clr-semi-dark-navy);
+
+    height: 230px;
+    width: 100%;
+    padding: 45px;
+
+    gap: 20px;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.modal-buttons button {
+    padding: 16px;
+}
+
+/* new game */
+.new-game {
+    width: 327px;
+    gap: 32px;
+}
+
+.pick-player {
+    width: 100%;
+}
+
+.new-game-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#btn-new-game-vs-cpu,
+#btn-new-game-vs-player {
+    padding-top: 14px;
+    padding-bottom: 22px;
+}
 
 @media (min-width: 768px) {
     .grid {
@@ -200,5 +348,9 @@ body {
         gap: 20px;
         grid-template-columns: repeat(3, 140px);
         grid-template-rows: 52px repeat(3, 140px) 72px;
+    }
+
+    .new-game {
+        width: 460px;
     }
 }
