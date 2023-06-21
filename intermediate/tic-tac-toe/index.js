@@ -21,6 +21,7 @@ const App = {
             btnNewGameVsPlayer: document.getElementById('btn-new-game-vs-player')
         },
         board: {
+            turn: document.querySelector('[data-id="turn"]'),
             btnRestart: document.querySelector('[data-id="btn-restart"]'),
             squares: document.querySelectorAll('[data-id="square"]')
         },
@@ -123,11 +124,17 @@ function squareClicked(square) {
     // Determine which player icon to add to the square
     const lastMove = App.state.moves.at(-1);
     const currentPlayer = App.state.moves.length === 0 ? 1 : getOppositePlayer(lastMove.playerId);
+
     const img = document.createElement('img');
-    if (currentPlayer === 1)
+    if (currentPlayer === 1) {
         img.src = "assets/icon-x.svg";
-    else
+    }
+    else {
         img.src = "assets/icon-o.svg";
+    }
+
+    App.el.board.turn.classList.toggle('fa-xmark');
+    App.el.board.turn.classList.toggle('fa-o');
 
     App.state.moves.push({
         squareId: +square.id,
