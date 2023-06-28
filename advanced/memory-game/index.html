@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="stylesheet" href="styles.css"/>
+
+    <title>Frontend Mentor | Memory game</title>
+
+    <script src="https://kit.fontawesome.com/3bfd3ce9e5.js"
+            crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Game setup start -->
+    <div id="game-setup" >
+        <h2>memory</h2>
+        <div class="setup-details">
+            <div class="setup-option">
+                <span>Select Theme</span>
+                <div class="setup-buttons">
+                    <button data-id="themes" class="menu-selection active">Numbers</button>
+                    <button data-id="themes" class="menu-selection idle">Icons</button>
+                </div>
+            </div>
+
+            <div class="setup-option">
+                <span>Number of Players</span>
+                <div class="setup-buttons">
+                    <button data-id="no-players" class="menu-selection active">1</button>
+                    <button data-id="no-players" class="menu-selection idle">2</button>
+                    <button data-id="no-players" class="menu-selection idle">3</button>
+                    <button data-id="no-players" class="menu-selection idle">4</button>
+                </div>
+            </div>
+
+            <div class="setup-option">
+                <span>Grid Size</span>
+                <div class="setup-buttons">
+                    <button data-id="grid-sizes" class="menu-selection active">4x4</button>
+                    <button data-id="grid-sizes" class="menu-selection idle">6x6</button>
+                </div>
+            </div>
+
+            <button data-id="btn-start-game" class="menu-button-big primary-color">Start Game</button>
+        </div>
+    </div>
+    <!-- Game setup end -->
+
+    <!-- Game board start -->
+    <div id="game-board" class="hidden">
+        <!-- Multiplayer scores start -->
+        <div class="menu">
+            <h2>memory</h2>
+            <button data-id="btnMenu" class="button-primary">Menu</button>
+        </div>
+
+        <div data-id="board" class="board">
+
+        </div>
+
+        <div class="scores">
+            <!-- Multiplayer scores start -->
+            <div data-id="multi-player-score" class="multi-player-score hidden">
+            </div>
+
+            <!-- Multiplayer scores end -->
+
+            <!-- Solo game time and moves counter start -->
+            <div data-id="single-player-score" class="single-player-score hidden">
+
+            </div>
+            <!-- Solo game time and moves counter end -->
+
+        </div>
+        <!-- Game board end -->
+
+        <div id="game-overlay" class="hidden" >
+            <div class="menu-container">
+                <button data-id="btn-mnu-restart-game" class="menu-button-big primary-color">Restart</button>
+                <button data-id="btn-mnu-new-game" class="menu-button-big secondary-color">New Game</button>
+                <button data-id="btn-mnu-resume-game" class="menu-button-big secondary-color">Resume Game</button>
+            </div>
+        </div>
+    </div>
+    <!-- Game board end -->
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
