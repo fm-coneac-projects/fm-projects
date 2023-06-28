@@ -22,6 +22,14 @@ const App = {
         //scores
         multiPlayerScore: document.querySelector('[data-id="multi-player-score"]'),
         singlePlayerScore: document.querySelector('[data-id="single-player-score"]'),
+
+        //results popup
+        gameResults: document.getElementById('game-results'),
+        winnerText: document.getElementById('result-winner'),
+        resultText: document.getElementById('result-text'),
+        resultList: document.getElementById('result-list'),
+        btnResultRestartGame: document.getElementById('btn-result-restart-game'),
+        btnResultNewGame: document.getElementById('btn-result-new-game'),
     },
 
     state: {
@@ -173,24 +181,32 @@ const App = {
             App.initScores();
         });
 
-        //board
-        App.el.btnMenu.addEventListener('click', () => console.log('Menu clicked!'));
-
         //menu
         App.el.btnMenu.addEventListener('click', () => {
             App.el.menuOverlay.classList.toggle('hidden');
         })
 
         App.el.btnMnuNewGame.addEventListener('click', () => {
-            //TODO => create new game
             App.el.menuOverlay.classList.toggle('hidden');
+            App.newGame();
         })
         App.el.btnMnuRestart.addEventListener('click', () => {
-            //TODO => restart game
             App.el.menuOverlay.classList.toggle('hidden');
+            App.resetGame();
         })
         App.el.btnMnuResume.addEventListener('click', () => {
             App.el.menuOverlay.classList.toggle('hidden');
+        })
+
+
+        //results popup
+        App.el.btnResultRestartGame.addEventListener('click', () => {
+            App.el.gameResults.classList.toggle('hidden');
+            App.resetGame();
+        })
+        App.el.btnResultNewGame.addEventListener('click', () => {
+            App.el.gameResults.classList.toggle('hidden');
+            App.newGame();
         })
     },
 
@@ -243,16 +259,103 @@ const App = {
     },
 
     verifyEndGame() {
-        //TODO => verify if game ended and display popup if so
-        console.log(App.state)
         if (App.state.currentGame.filter(l => l.player === 0).length === 0) {
             console.log('game ended')
 
             if (App.state.players === 1)
                 clearInterval(App.state.intervalId);
-            //display winner popup
-            // App.state.playerScores
+
+            App.displayResultsPopup();
         }
+    },
+
+    displayResultsPopup() {
+        App.el.gameResults.classList.toggle('hidden');
+
+        if (App.state.players === 1) {
+            let time = document.getElementById('single-time').innerHTML;
+            let moves = App.state.moves;
+
+            clearInterval(App.state.intervalId);
+            App.el.winnerText.innerHTML = `You did it!`;
+            App.el.resultText.innerHTML = `Game over! Here's how you got on...`;
+            let resultsHtml = `
+                 <div class="result">
+                        <div class="result-name">Time Elapsed</div>
+                        <div class="result-score">${time}</div>
+                 </div>
+                  <div class="result">
+                        <div class="result-name">Moves Taken</div>
+                        <div class="result-score">${moves} Moves</div>
+                 </div>
+            `;
+            App.el.resultList.innerHTML = resultsHtml;
+        } else {
+            //results to be populated from state
+            let results = [
+                {
+                    playerNumber: 3,
+                    pairs: 8
+                },
+                {
+                    playerNumber: 1,
+                    pairs: 8
+                },
+                {
+                    playerNumber: 2,
+                    pairs: 3
+                },
+                {
+                    playerNumber: 4,
+                    pairs: 1
+                },
+            ];
+
+            let winner = results[0];
+            App.el.winnerText.innerHTML = `Player ${winner.playerNumber} Wins!`;
+
+            let resultsHtml = `
+                 <div class="result winner">
+                        <div class="result-name winner">Player ${winner.playerNumber}</div>
+                        <div class="result-score winner">${winner.pairs} Pairs</div>
+                 </div>
+            `;
+
+            for (let i = 1; i < results.length; i++) {
+                let className = winner.pairs === results[i].pairs ? "winner" : "";
+                resultsHtml += `
+                  <div class="result ${className}">
+                        <div class="result-name ${className}">Player ${results[i].playerNumber}</div>
+                        <div class="result-score ${className}">${results[i].pairs} Pairs</div>
+                  </div>
+                `;
+            }
+            App.el.resultList.innerHTML = resultsHtml;
+        }
+    },
+
+    resetState() {
+        App.state = {
+            theme: 'Numbers', //Numbers, Icons
+            players: 1, //1, 2, 3, 4 (0 = no player)
+            gridSize: 4, //4x4 or 6x6
+            currentPlayer: 1,
+            currentGame: [],
+            playerScores: [],
+            moves: 0, //for single player only
+            intervalId: 0
+        }
+    },
+
+    resetGame() {
+        //TODO reset game
+        App.resetState();
+        App.el.gameSetup.classList.toggle('hidden');
+    },
+
+    newGame() {
+        //TODO new game
+        App.resetState();
     }
 
 }
@@ -307,6 +410,6 @@ function onBoardItemClick(event) {
         event.target.classList.remove('dark-color');
         event.target.classList.add('primary-color');
 
-        setTimeout(App.updateMoves, 1500);
+        setTimeout(App.updateMoves, 500);
     }
 }

@@ -18,7 +18,7 @@
 </head>
 <body>
     <!-- Game setup start -->
-    <div id="game-setup" >
+    <div id="game-setup">
         <h2>memory</h2>
         <div class="setup-details">
             <div class="setup-option">
@@ -80,11 +80,24 @@
         </div>
         <!-- Game board end -->
 
-        <div id="game-overlay" class="hidden" >
+        <div id="game-overlay" class="hidden">
             <div class="menu-container">
                 <button data-id="btn-mnu-restart-game" class="menu-button-big primary-color">Restart</button>
                 <button data-id="btn-mnu-new-game" class="menu-button-big secondary-color">New Game</button>
                 <button data-id="btn-mnu-resume-game" class="menu-button-big secondary-color">Resume Game</button>
+            </div>
+        </div>
+
+        <div id="game-results" class="hidden">
+            <div class="result-container">
+                <div>
+                    <h1 id="result-winner">Player 3 Wins!</h1>
+                    <p id="result-text">Game over! Here are the results...</p>
+                </div>
+                <div id="result-list" class="result-list">
+                </div>
+                <button id="btn-result-restart-game" class="menu-button-big primary-color">Restart</button>
+                <button id="btn-result-new-game" class="menu-button-big secondary-color">Setup New Game</button>
             </div>
         </div>
     </div>
