@@ -226,7 +226,7 @@ const App = {
             item1.classList.remove('primary-color');
             item2.classList.remove('primary-color');
 
-            if (item1.innerHTML === item2.innerHTML) {
+            if (item1.innerHTML == item2.innerHTML) {
                 //update score && display new score
                 App.state.playerScores[currentPlayer - 1]++;
 
