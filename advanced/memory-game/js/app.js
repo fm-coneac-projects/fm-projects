@@ -84,7 +84,6 @@ const App = {
         for (let i = 0; i < App.state.currentGame.length; i++) {
             let index = App.state.currentGame[i]["index"];
             let number = App.state.currentGame[i]["number"];
-            let player = App.state.currentGame[i]["player"];
 
             boardHtml += `
                 <div id="${index}" data-id="board-item" class="board-item ${classSize} dark-color">${number}</div>
@@ -100,7 +99,7 @@ const App = {
 
     initScores() {
         if (App.state.players === 1) {
-            App.el.singlePlayerScore.classList.toggle('hidden');
+            App.el.singlePlayerScore.classList.remove('hidden');
             App.el.singlePlayerScore.innerHTML = `
                 <!-- Time elapsed -->
                 <div class="score-player secondary-color">
@@ -132,7 +131,7 @@ const App = {
             }, 1000);
 
         } else {
-            App.el.multiPlayerScore.classList.toggle('hidden');
+            App.el.multiPlayerScore.classList.remove('hidden');
             let scoreHtml = ``;
             for (let i = 1; i <= App.state.players; i++) {
                 let colorClass;
@@ -172,8 +171,8 @@ const App = {
             }));
 
         App.el.btnStartGame.addEventListener("click", () => {
-            App.el.gameSetup.classList.toggle('hidden');
-            App.el.gameBoard.classList.toggle('hidden');
+            App.el.gameSetup.classList.add('hidden');
+            App.el.gameBoard.classList.remove('hidden');
 
             App.initGame();
             App.initBoard();
@@ -182,29 +181,28 @@ const App = {
 
         //menu
         App.el.btnMenu.addEventListener('click', () => {
-            App.el.menuOverlay.classList.toggle('hidden');
+            App.el.menuOverlay.classList.remove('hidden');
         })
 
         App.el.btnMnuNewGame.addEventListener('click', () => {
-            App.el.menuOverlay.classList.toggle('hidden');
+            App.el.menuOverlay.classList.add('hidden');
             App.newGame();
         })
         App.el.btnMnuRestart.addEventListener('click', () => {
-            App.el.menuOverlay.classList.toggle('hidden');
+            App.el.menuOverlay.classList.add('hidden');
             App.resetGame();
         })
         App.el.btnMnuResume.addEventListener('click', () => {
-            App.el.menuOverlay.classList.toggle('hidden');
+            App.el.menuOverlay.classList.add('hidden');
         })
-
 
         //results popup
         App.el.btnResultRestartGame.addEventListener('click', () => {
-            App.el.gameResults.classList.toggle('hidden');
+            App.el.gameResults.classList.add('hidden');
             App.resetGame();
         })
         App.el.btnResultNewGame.addEventListener('click', () => {
-            App.el.gameResults.classList.toggle('hidden');
+            App.el.gameResults.classList.add('hidden');
             App.newGame();
         })
     },
@@ -230,8 +228,8 @@ const App = {
                 App.state.playerScores[currentPlayer - 1]++;
 
                 //save state in game
-                let currentEl1 = App.state.currentGame.find(l => l.index === item1.id);
-                let currentEl2 = App.state.currentGame.find(l => l.index === item2.id);
+                let currentEl1 = App.state.currentGame.find(l => l.index == item1.id);
+                let currentEl2 = App.state.currentGame.find(l => l.index == item2.id);
 
                 currentEl1.player = currentPlayer;
                 currentEl2.player = currentPlayer;
@@ -269,7 +267,7 @@ const App = {
     },
 
     displayResultsPopup() {
-        App.el.gameResults.classList.toggle('hidden');
+        App.el.gameResults.classList.remove('hidden');
 
         if (App.state.players === 1) {
             let time = document.getElementById('single-time').innerHTML;
@@ -333,6 +331,7 @@ const App = {
     },
 
     resetState() {
+        clearInterval(App.state.intervalId);
         App.state = {
             theme: 'Numbers', //Numbers, Icons
             players: 1, //1, 2, 3, 4 (0 = no player)
@@ -346,9 +345,8 @@ const App = {
     },
 
     resetGame() {
-        //TODO reset game
         App.resetState();
-        App.el.gameSetup.classList.toggle('hidden');
+        App.el.gameSetup.classList.remove('hidden');
     },
 
     newGame() {
@@ -403,6 +401,10 @@ function randomize(arr) {
 }
 
 function onBoardItemClick(event) {
+    const selectedBoardItems = document.querySelectorAll('.board-item.primary-color');
+    if (selectedBoardItems.length >= 2)
+        return;
+
     if (event.target.classList.contains('dark-color')) {
         event.target.classList.remove('dark-color');
         event.target.classList.add('primary-color');
