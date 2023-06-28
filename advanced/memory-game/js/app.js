@@ -49,7 +49,7 @@ const App = {
 
         const nrElements = App.state.gridSize * App.state.gridSize;
         let maximum = nrElements / 2;
-        let templateArray = new Array();
+        let templateArray = [];
 
         for (let i = 1; i <= maximum; i++) {
             templateArray.push(i);
@@ -101,7 +101,7 @@ const App = {
     initScores() {
         if (App.state.players === 1) {
             App.el.singlePlayerScore.classList.toggle('hidden');
-            let scoreHtml = `
+            App.el.singlePlayerScore.innerHTML = `
                 <!-- Time elapsed -->
                 <div class="score-player secondary-color">
                     <span class="player-name">Time</span>
@@ -114,7 +114,6 @@ const App = {
                     <span id="single-moves" class="player-score">0</span>
                 </div>
             `;
-            App.el.singlePlayerScore.innerHTML = scoreHtml;
 
             App.el.singleTime = document.getElementById('single-time');
             App.el.singleMoves = document.getElementById('single-moves');
@@ -214,7 +213,7 @@ const App = {
         //verify how many opened items we have
         const selectedBoardItems = document.querySelectorAll('.board-item.primary-color');
 
-        if (selectedBoardItems.length == 2) {
+        if (selectedBoardItems.length === 2) {
             if (App.state.players === 1) {
                 App.state.moves++;
                 document.getElementById('single-moves').innerHTML = App.state.moves;
@@ -231,8 +230,8 @@ const App = {
                 App.state.playerScores[currentPlayer - 1]++;
 
                 //save state in game
-                let currentEl1 = App.state.currentGame.find(l => l.index == item1.id);
-                let currentEl2 = App.state.currentGame.find(l => l.index == item2.id);
+                let currentEl1 = App.state.currentGame.find(l => l.index === item1.id);
+                let currentEl2 = App.state.currentGame.find(l => l.index === item2.id);
 
                 currentEl1.player = currentPlayer;
                 currentEl2.player = currentPlayer;
@@ -279,7 +278,7 @@ const App = {
             clearInterval(App.state.intervalId);
             App.el.winnerText.innerHTML = `You did it!`;
             App.el.resultText.innerHTML = `Game over! Here's how you got on...`;
-            let resultsHtml = `
+            App.el.resultList.innerHTML = `
                  <div class="result">
                         <div class="result-name">Time Elapsed</div>
                         <div class="result-score">${time}</div>
@@ -289,7 +288,6 @@ const App = {
                         <div class="result-score">${moves} Moves</div>
                  </div>
             `;
-            App.el.resultList.innerHTML = resultsHtml;
         } else {
             //results to be populated from state
             let results = [
@@ -357,7 +355,6 @@ const App = {
         //TODO new game
         App.resetState();
     }
-
 }
 
 window.addEventListener('load', App.init);
