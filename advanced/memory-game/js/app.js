@@ -223,6 +223,9 @@ const App = {
             let item1 = selectedBoardItems[0];
             let item2 = selectedBoardItems[1];
 
+            item1.classList.remove('primary-color');
+            item2.classList.remove('primary-color');
+
             if (item1.innerHTML === item2.innerHTML) {
                 //update score && display new score
                 App.state.playerScores[currentPlayer - 1]++;
@@ -235,17 +238,11 @@ const App = {
                 currentEl2.player = currentPlayer;
 
                 //make opened items inactive
-                item1.classList.remove('primary-color');
                 item1.classList.add('secondary-color');
-
-                item2.classList.remove('primary-color');
                 item2.classList.add('secondary-color');
             } else {
                 //close opened items
-                item1.classList.remove('primary-color');
                 item1.classList.add('dark-color');
-
-                item2.classList.remove('primary-color');
                 item2.classList.add('dark-color');
             }
 
