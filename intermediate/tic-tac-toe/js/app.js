@@ -22,7 +22,7 @@ const App = {
         },
         board: {
             turn: document.querySelector('[data-id="turn"]'),
-            btnRestart: document.querySelector('[data-id="btn-restart"]'),
+            btnReset: document.querySelector('[data-id="btn-reset"]'),
             squares: document.querySelectorAll('[data-id="square"]')
         },
         modal: {
@@ -88,7 +88,7 @@ const App = {
         });
 
         // TODO
-        App.el.board.btnRestart.addEventListener('click', () => console.log('restart game'));
+        App.el.board.btnReset.addEventListener('click', () => console.log('restart game'));
 
         App.el.board.squares.forEach(square => {
             square.addEventListener('click', () => squareClicked(square));
@@ -98,8 +98,6 @@ const App = {
         App.el.modal.btnQuit.addEventListener('click', quitGame);
     }
 }
-
-window.addEventListener('load', App.init());
 
 function toggleSilverButton() {
     App.el.newGame.btnX.classList.toggle('btn-secondary-silver');
@@ -188,3 +186,28 @@ function quitGame() {
 function resetBoard() {
     App.el.board.squares.forEach(square => square.replaceChildren());
 }
+
+
+
+import View from "./view.js";
+
+function init() {
+    const view = new View();
+
+    view.bindGameResetEvent(event => {
+        console.log('reset event');
+        console.log(event);
+    });
+
+    view.bindNewRoundEvent(event => {
+        console.log('new round event');
+        console.log(event);
+    });
+
+    view.bindPlayerMoveEvent(event => {
+        console.log('player move event');
+        console.log(event);
+    });
+}
+
+window.addEventListener('load', init);
