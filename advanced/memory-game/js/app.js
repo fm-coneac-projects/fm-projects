@@ -92,7 +92,6 @@ const App = {
         App.el.board.innerHTML = boardHtml;
 
         document.querySelectorAll('[data-id="board-item"]').forEach(boardItem => {
-            // boardItem.style.transition = 'all 2s';
             boardItem.addEventListener('click', event => onBoardItemClick(event));
         })
     },
@@ -212,19 +211,17 @@ const App = {
         const selectedBoardItems = document.querySelectorAll('.board-item.primary-color');
 
         if (selectedBoardItems.length === 2) {
+            let item1 = selectedBoardItems[0];
+            let item2 = selectedBoardItems[1];
+            item1.classList.remove('primary-color');
+            item2.classList.remove('primary-color');
+
             if (App.state.players === 1) {
                 App.state.moves++;
                 document.getElementById('single-moves').innerHTML = App.state.moves;
-                console.log(App.state.moves);
             }
 
-            //multi player
             let currentPlayer = App.state.currentPlayer;
-            let item1 = selectedBoardItems[0];
-            let item2 = selectedBoardItems[1];
-
-            item1.classList.remove('primary-color');
-            item2.classList.remove('primary-color');
 
             if (item1.innerHTML == item2.innerHTML) {
                 //update score && display new score
