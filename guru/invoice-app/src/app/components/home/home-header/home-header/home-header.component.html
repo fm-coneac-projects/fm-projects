@@ -1,0 +1,19 @@
+<div class="mt-20 w-[730px] flex justify-between items-center">
+  <div>
+    <h1 class="text-darkBG text-4xl font-bold tracking-tight">Invoices</h1>
+    <span class="text-darkGrey text-sm font-medium tracking-tight">No invoices</span>
+  </div>
+  <div class="flex gap-6">
+    <div
+        class="flex items-center gap-2 text-darkBG text-md font-bold tracking-tight">
+      <span>Filter by status</span>
+      <mat-icon>expand_more</mat-icon>
+    </div>
+    <button mat-raised-button routerLink="/newInvoice"
+            class="bg-darkViolet w-[150px] h-[40px] text-[color:white] rounded-full p-3 flex gap-4 place-items-center">
+
+      <mat-icon class="text-md">add</mat-icon>
+      New Invoice
+    </button>
+  </div>
+</div>

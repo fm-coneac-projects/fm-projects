@@ -1,0 +1,56 @@
+<div class="flex place-content-center w-[730px]">
+  <div *ngIf="noItems === 0" class="flex flex-col items-center">
+    <img class="mt-40" src="./assets/illustration-empty.svg" alt="no results"/>
+    <h2 class="text-darkBG text-2xl font-bold tracking-tight mt-16">There is nothing here</h2>
+    <p class="mt-5 text-darkGrey text-sm font-thin tracking-normal">Create an invoice by clicking the</p>
+    <p class="text-darkGrey text-sm font-thin tracking-normal"><span class="font-bold">New Invoice</span> button and get started</p>
+  </div>
+
+  <div *ngIf="noItems !== 0" class="flex flex-col mt-16 w-full gap-4">
+
+    <div class="flex place-content-around place-items-center bg-[white] p-5 rounded-lg">
+      <div class="font-bold text-darkBG tracking-tighter">#RT3080</div>
+      <div class="font-light text-darkGrey tracking-tight">Due 19 Aug 2021</div>
+      <div class="font-light text-darkGrey tracking-tight">Jensen Huang</div>
+      <div class="font-bold text-darkBG tracking-tighter">$1,800.90</div>
+      <div class="font-bold text-green-400 bg-green-100 tracking-tighter w-[105px] h-[40px] rounded-lg flex place-content-center place-items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+          <circle cx="4" cy="4" r="4" fill="#33D69F"/>
+        </svg>
+        Paid
+      </div>
+      <div>></div>
+    </div>
+
+    <div class="flex place-content-around place-items-center bg-[white] p-5 rounded-lg">
+      <div class="font-bold text-darkBG tracking-tighter">#RT3080</div>
+      <div class="font-light text-darkGrey tracking-tight">Due 19 Aug 2021</div>
+      <div class="font-light text-darkGrey tracking-tight">Jensen Huang</div>
+      <div class="font-bold text-darkBG tracking-tighter">$1,800.90</div>
+      <div class="font-bold text-orange-400 bg-orange-100 tracking-tighter w-[105px] h-[40px] rounded-lg flex place-content-center place-items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+          <circle cx="4" cy="4" r="4" fill="#33D69F"/>
+        </svg>
+        Paid
+      </div>
+      <div>></div>
+    </div>
+
+    <div class="flex place-content-around place-items-center bg-[white] p-5 rounded-lg">
+      <div class="font-bold text-darkBG tracking-tighter">#RT3080</div>
+      <div class="font-light text-darkGrey tracking-tight">Due 19 Aug 2021</div>
+      <div class="font-light text-darkGrey tracking-tight">Jensen Huang</div>
+      <div class="font-bold text-darkBG tracking-tighter">$1,800.90</div>
+      <div class="font-bold text-gray-400 bg-gray-100 tracking-tighter w-[105px] h-[40px] rounded-lg flex place-content-center place-items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+          <circle cx="4" cy="4" r="4" fill="#33D69F"/>
+        </svg>
+        Paid
+      </div>
+      <div>></div>
+    </div>
+
+
+  </div>
+
+</div>
