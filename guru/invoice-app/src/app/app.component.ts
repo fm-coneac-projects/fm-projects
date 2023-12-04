@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule} from "@angular/common/http";
 import { RouterOutlet } from '@angular/router';
 import { MenuComponent } from "./components/menu/menu/menu.component";
 import { MatIconModule } from "@angular/material/icon";
+import { InvoiceService } from "./services/invoice.service";
+import { MatButtonModule } from "@angular/material/button";
 
 @Component({
   selector: 'app-root',
@@ -11,9 +14,11 @@ import { MatIconModule } from "@angular/material/icon";
     CommonModule,
     RouterOutlet,
     MenuComponent,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [InvoiceService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

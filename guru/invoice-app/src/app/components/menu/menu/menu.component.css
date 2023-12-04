@@ -1,3 +1,7 @@
 .logo-bg {
   background-image: url('../../../../assets/menubg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 103px;
+  height:103px;
 }
