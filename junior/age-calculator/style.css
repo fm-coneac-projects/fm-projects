@@ -9,10 +9,7 @@
     --clr-neutral-offblack: hsl(0, 0%, 8%);
 }
 
-/* Screen sizes
-Mobile: 375px
-Desktop: 1440px */
-
+/* Start with mobile first 375px */
 /* Typography */
 body {
     margin: 0;
@@ -20,11 +17,93 @@ body {
     box-sizing: border-box;
     font-size: 32px;
     font-family: 'Poppins', sans-serif;
+
+    background-color: var(--clr-neutral-offwhite);
+    color: var(--clr-neutral-offblack);
     /*Weights: 400i, 700, 800i*/
 }
 
+.container {
+    background-color: var(--clr-neutral-white);
 
-/*Typography*/
-/*Body Copy*/
-/*Font size (inputs): 32px*/
-/*
+    margin-top: 88px;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 55px 24px 40px;
+    border-radius: 35px 35px 95px 35px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.date-container {
+    display: flex;
+    gap: 14px;
+}
+
+.date-label {
+    color: var(--clr-neutral-smokey);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.date-input {
+    border-color: var(--clr-neutral-lightgrey);
+    color: var(--clr-neutral-offblack);
+    font-size: 1.2rem;
+}
+
+.separator-line {
+    background-color: var(--clr-neutral-lightgrey);
+    height: 1px;
+    width: 100%;
+    z-index: 3;
+}
+
+.separator-arrow {
+    background-color: var(--clr-primary-purple);
+    z-index: 2;
+
+    top: -30px;
+    border-radius: 50%;
+    width: 66px;
+    height: 66px;
+}
+
+.arrow {
+    z-index: 3;
+}
+
+.details-container {
+    font-weight: 800;
+    font-style: italic;
+    font-size: 3rem;
+}
+
+.date-text {
+    color: var(--clr-primary-purple);
+}
+
+/* mobile */
+@media only screen and (max-width: 1439px) {
+    .container {
+        max-width: 340px;
+    }
+
+    .date-container {
+        /*max-width: 291px;*/
+    }
+}
+
+/* desktop */
+@media only screen and (min-width: 1440px) {
+    .container {
+        max-width: 760px;
+    }
+
+    .date-container {
+        max-width: 490px;
+    }
+
+}
