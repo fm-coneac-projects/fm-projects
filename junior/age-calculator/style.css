@@ -1,109 +1,16 @@
-:root {
-    --clr-primary-purple: hsl(259, 100%, 65%);
-    --clr-primary-lightred: hsl(0, 100%, 67%);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-    --clr-neutral-white: hsl(0, 0%, 100%);
-    --clr-neutral-offwhite: hsl(0, 0%, 94%);
-    --clr-neutral-lightgrey: hsl(0, 0%, 86%);
-    --clr-neutral-smokey: hsl(0, 1%, 44%);
-    --clr-neutral-offblack: hsl(0, 0%, 8%);
-}
-
-/* Start with mobile first 375px */
-/* Typography */
 body {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-size: 32px;
     font-family: 'Poppins', sans-serif;
 
-    background-color: var(--clr-neutral-offwhite);
-    color: var(--clr-neutral-offblack);
     /*Weights: 400i, 700, 800i*/
 }
 
 .container {
-    background-color: var(--clr-neutral-white);
-
-    margin-top: 88px;
-    margin-left: auto;
-    margin-right: auto;
-
     padding: 55px 24px 40px;
     border-radius: 35px 35px 95px 35px;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.date-container {
-    display: flex;
-    gap: 14px;
-}
-
-.date-label {
-    color: var(--clr-neutral-smokey);
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.date-input {
-    border-color: var(--clr-neutral-lightgrey);
-    color: var(--clr-neutral-offblack);
-    font-size: 1.2rem;
-}
-
-.separator-line {
-    background-color: var(--clr-neutral-lightgrey);
-    height: 1px;
-    width: 100%;
-    z-index: 3;
-}
-
-.separator-arrow {
-    background-color: var(--clr-primary-purple);
-    z-index: 2;
-
-    top: -30px;
-    border-radius: 50%;
-    width: 66px;
-    height: 66px;
-}
-
-.arrow {
-    z-index: 3;
-}
-
-.details-container {
-    font-weight: 800;
-    font-style: italic;
-    font-size: 3rem;
-}
-
-.date-text {
-    color: var(--clr-primary-purple);
-}
-
-/* mobile */
-@media only screen and (max-width: 1439px) {
-    .container {
-        max-width: 340px;
-    }
-
-    .date-container {
-        /*max-width: 291px;*/
-    }
-}
-
-/* desktop */
-@media only screen and (min-width: 1440px) {
-    .container {
-        max-width: 760px;
-    }
-
-    .date-container {
-        max-width: 490px;
-    }
-
 }
