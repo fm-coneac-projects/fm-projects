@@ -28,6 +28,7 @@
       }
     }
   </script>
+  <script type = "text/JavaScript" src = "https://MomentJS.com/downloads/moment.js"></script>
   <title>Frontend Mentor | Age calculator app</title>
   <link href="style.css" rel="stylesheet">
 </head>
@@ -35,29 +36,33 @@
   <div class="container bg-white w-[345px] lg:w-[345px] xl:w-[760px] gap-10 flex flex-col ">
     <div class="flex gap-4 xl:w-[490px]">
       <div class="w-[30%] flex flex-col gap-2">
-        <label for="day" class="uppercase text-smokey text-sm font-bold">Day</label>
-        <input type="text" id="day" class="date-input border border-lightgrey text-offblack text-2xl rounded-lg font-bold p-4" value="24" >
+        <label for="day" class="invalid:text-red-500 uppercase text-smokey text-sm font-bold">Day</label>
+        <input type="text" inputmode="numeric" placeholder="DD"  min="1" max="31" id="day" class="invalid:border-red-500 date-input border border-lightgrey text-offblack text-xl rounded-lg font-bold p-4" value="" required>
+        <span class="validity text-xs text-red-500"></span>
       </div>
       <div class="w-[30%] flex flex-col gap-2">
         <label for="month" class="uppercase text-smokey text-sm font-bold">Month</label>
-        <input type="text" id="month" class="date-input border border-lightgrey text-offblack text-2xl rounded-lg font-bold p-4" value="09" >
+        <input type="text" inputmode="numeric" placeholder="MM"  min="1" max="12" id="month" class="invalid:border-red-500 date-input border border-lightgrey text-offblack text-xl rounded-lg font-bold p-4" value="" required>
+        <span class="validity text-xs text-red-500"></span>
       </div>
       <div class="w-[30%] flex flex-col gap-2">
         <label for="year" class="uppercase text-smokey text-sm font-bold">Year</label>
-        <input type="text" id="year" class="date-input border border-lightgrey text-offblack text-2xl rounded-lg font-bold p-4" value="1984" >
+        <input type="text" inputmode="numeric" placeholder="YYYY"  min="1900" max="2024" id="year" class="invalid:border-red-500 date-input border border-lightgrey text-offblack text-xl rounded-lg font-bold p-4" value="" required>
+        <span class="validity text-xs text-red-500"></span>
       </div>
     </div>
     <div class="separator mt-[14px] justify-center relative">
-      <div class="separator-arrow bg-purple z-[2] w-[66px] h-[66px] rounded-full top-[-30px] absolute left-[40%] xl:left-[91%] flex items-center justify-center z-2">
+      <button id="btnCalculate" class="separator-arrow bg-purple z-[2] w-[66px] h-[66px] rounded-full top-[-30px] absolute left-[40%] xl:left-[91%] flex items-center justify-center z-2">
         <img src="assets/images/icon-arrow.svg" class="z-[3] w-1/2 h-1/2" alt="arrow">
-      </div>
+      </button>
       <div class="bg-lightgrey h-[1px] z-[3]"></div>
     </div>
-    <div class="details-container font-bold italic text-6xl mt-3 xl:text-8xl">
-      <p><span id="years-text" class="text-purple">38</span> years</p>
-      <p><span id="months-text" class="text-purple">3</span> months</p>
-      <p><span id="days-text" class="text-purple">26</span> days</p>
+    <div class="details-container font-bold italic text-5xl mt-3 xl:text-8xl">
+      <p><span id="years-text" class="text-purple">--</span> years</p>
+      <p><span id="months-text" class="text-purple">--</span> months</p>
+      <p><span id="days-text" class="text-purple">--</span> days</p>
     </div>
   </div>
+  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

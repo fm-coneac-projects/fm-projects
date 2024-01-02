@@ -14,3 +14,15 @@ body {
     padding: 55px 24px 40px;
     border-radius: 35px 35px 95px 35px;
 }
+
+input:invalid + span::after {
+    position: absolute;
+    content: "Must be a valid date";
+    font-size: 9px;
+    font-style: italic;
+}
+
+input:valid + span::after {
+    position: absolute;
+    content: "";
+}
