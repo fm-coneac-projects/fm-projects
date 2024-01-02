@@ -21,28 +21,25 @@
             white: 'hsl(0, 0%, 100%)',
             grey: 'hsl(0, 0%, 50%)',
             black: 'hsl(0, 0%, 7%)',
-          }
+          },
+
         }
       }
     }
   </script>
   <link href="style.css" rel="stylesheet">
 </head>
-<body>
-
-  Learning
-
-  Published 21 Dec 2023
-
-  HTML & CSS foundations
-
-  These languages are the backbone of every website, defining structure, content, and presentation.
-
-  Greg Hooper
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+<body class="min-h-screen w-full m-0 p-0 bg-yellow text-black text-[16px] flex flex-col justify-center items-center">
+  <main class="w-[330px] lg:w-[386px] bg-white p-5 flex flex-col rounded-2xl border-black border-[1px] border-r-8 border-b-8">
+    <img class="rounded-2xl" src="assets/images/illustration-article.svg" alt="illustration article">
+    <button class="mt-6 font-bold text-xs p-1 w-[100px] rounded-lg bg-yellow">Learning</button>
+    <p class="mt-4 text-xs lg:text-md text-grey font-bold">Published 21 Dec 2023</p>
+    <h1 class="mt-4 font-bold text-lg lg:text-xl hover:text-yellow hover:cursor-pointer">HTML & CSS foundations</h1>
+    <p class="mt-4 text-sm tracking-normal lg:tracking-wide text-grey">These languages are the backbone of every website, defining structure, content, and presentation.</p>
+    <div class="mt-4 flex gap-2 items-center">
+      <img class="w-8" src="assets/images/image-avatar.webp" alt="">
+      <span class="text-sm font-bold">Greg Hooper</span>
+    </div>
+  </main>
 </body>
 </html>
