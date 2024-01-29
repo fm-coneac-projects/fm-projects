@@ -1,14 +1,20 @@
 const menuBtn = document.getElementById('menuBtn');
 const menuOver = document.getElementById("menuOver");
 const container = document.getElementById("container");
-menuBtn.addEventListener('click', () => {
+const btnClose = document.getElementById('btnClose');
 
-    // menuBtn.classList.toggle('open');
-    // menuBtn.classList.toggle('closed');
-
+function showHideMenu() {
     container.classList.toggle('opacity');
     container.classList.toggle('no-opacity');
 
     menuOver.classList.toggle('hidden');
     menuOver.classList.toggle('visible');
+}
+
+menuBtn.addEventListener('click', () => {
+    showHideMenu();
 });
+
+btnClose.addEventListener('click', () => {
+    showHideMenu();
+})
