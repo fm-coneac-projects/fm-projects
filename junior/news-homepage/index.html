@@ -17,10 +17,23 @@
 
 </head>
 <body>
-    <div class="container">
+    <aside id="menuOver" class="hidden">
+        <img  alt="close" src="./assets/images/icon-menu-close.svg">
+
+        <nav aria-label="side-menu">
+            <ul>
+                <li>Home</li>
+                <li>New</li>
+                <li>Popular</li>
+                <li>Trending</li>
+                <li>Categories</li>
+            </ul>
+        </nav>
+    </aside>
+    <div id="container" class="container no-opacity">
         <header>
             <img class="logo" alt="logo" src="./assets/images/logo.svg">
-            <nav>
+            <nav aria-label="main-menu">
                 <ul>
                     <li>Home</li>
                     <li>New</li>
@@ -29,7 +42,7 @@
                     <li>Categories</li>
                 </ul>
             </nav>
-            <img class="menuBtn" src="./assets/images/icon-menu.svg" alt="menu">
+            <div id="menuBtn" class="closed"></div>
         </header>
         <main>
             <div class="main-left">
@@ -88,5 +101,6 @@
             </article>
         </footer>
     </div>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
